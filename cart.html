@@ -4,10 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+    .cart-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  /* justify-content: space-between; */
+  align-items: center;
+  /* border-style: inset; */
+  /* display: flex; */
+  /* gap: 15px; */
+  /* align-items: flex-start; */
+  width: 700px;
+  margin: 0 auto;
+}
+
+.image-column img {
+  width: 80px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.info-column {
+  /* display: flex;
+  flex-direction: column; */
+  gap: 5px;
+  width: 100%;
+}
+
+.cart-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.price {
+  color: green;
+  font-size: 20px;
+  float: right ;
+  font-weight: bold;
+}
+
+.cart-info {
+  font-size: 16px;
+  color: #555;
+}
+#cart-items {
+  display: flex;
+  flex-direction: column; /* ← Makes items stack vertically */
+  gap: 15px;
+}
+#TotalAmount{
+    font-size: 22px;
+    font-weight: bold;
+    /* text-align: center; */
+}
+.Rs{
+     font-size: 22px;
+}
+.amount{
+    text-align: center;
+}
+.btn-column {
+  padding: 6px 12px;
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  float:right;
+}
+
+.btn-column:hover {
+  background-color: darkred;
+}
+
+   </style>    
+
 </head>
 <body>
 
-    <div id="card-container1" style="display: flex; justify-content: space-between; align-items: center; width: 100%;" >
+    <div id="card-container1" style="justify-content: space-between; align-items: center; width: 100%;" >
         <!-- <div><img src="./fb.png" alt=""></div>
         <div style="width: 90%;">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem praesentium animi ex natus sint placeat quo recusandae sequi neque distinctio eius eum dignissimos, quidem earum delectus non error tempore numquam?</p>
@@ -21,6 +100,45 @@
             </div>
         </div> -->
     </div>
+    
+
+    <!-- <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cart-count">(0)</span></div>
+
+   Products -->
+  <!-- <div class="product">
+  <img src="lipstick.jpg" width="50">
+  <div>
+    <h4>Red Lipstick</h4>
+    <p>$12.99</p>
+    <button onclick="addToCart('Red Lipstick', 12.99, 'lipstick.jpg')">Add to Cart</button>
+  </div>
+</div> --> 
+
+
+  <!-- <div class="product">
+    <span>Product B - $250</span>
+    <button onclick="addToCart('Product B', 250)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <span>Product C - $75</span>
+    <button onclick="addToCart('Product C', 75)">Add to Cart</button>
+  </div> -->
+
+  <!-- Cart Panel -->
+  <!-- <div class="cart-panel" id="cart-panel">
+     <div id="cart-items"></div> -->
+    <!-- <div class="cart-total">Total: $<span id="cart-total">0</span></div>
+  </div>            --> 
+
+  <!-- Add this container to hold all products -->
+<div id="product-container"></div>
+
+<div class="amount">
+    <p class="Rs">Total Price : <span id="TotalAmount"></span></p>
+</div>
+<body onload="renderProducts()">
+
     <script src="cart.js"></script>
 </body>
 </html>

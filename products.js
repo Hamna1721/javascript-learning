@@ -68,14 +68,23 @@ function navigateToProductDetail(productId){
     window.location.href = `productdetail.html?productId=${productId}`;
  
 }
-function AddToCart(product){
-debugger
+function AddToCart(product) {
+  // Add to cart array
   carts.push(product);
-      console.log("Cart:", carts);
-      localStorage.setItem('cart', JSON.stringify(carts))
-   // window.location.href = `productdetail.html?productId=${productId}`;
- 
+
+  // Save to localStorage
+  localStorage.setItem('cart', JSON.stringify(carts));
+
+  console.log("Cart:", carts);
+
+  // Show modal with confirmation
+  document.getElementById("cartModalBody").textContent =
+    `${product.title} has been added to your cart.`;
+
+  let modal = new bootstrap.Modal(document.getElementById('cartModal'));
+  modal.show();
 }
+
 
 getData();
 
